@@ -1,63 +1,61 @@
-# 🎬 Movie Recommendation System with Sentiment Analysis
+# Movie Recommendation System with Sentiment Analysis
 
-This project is a hybrid recommendation system that suggests similar movies based on content features and enhances recommendations with basic sentiment analysis of movie reviews. It demonstrates core concepts of Natural Language Processing (NLP), cosine similarity, and sentiment classification using VADER.
+This project is a content-based movie recommendation system enhanced with sentiment analysis on user reviews. It allows users to enter a movie name and receive a list of similar recommended movies. Additionally, users can input text (like a movie review or comment), and the system will analyze its sentiment.
 
----
+## Features
 
-## 💡 Features
+- Content-based movie recommendations using TF-IDF and cosine similarity
+- Sentiment analysis using VADER (NLTK)
+- Interactive web interface built with Streamlit
+- Option to test sentiment of any user input text
+- Simple, fast, and easy to use
 
-- Content-Based Movie Recommendation using:
-  - Title, genres, keywords, overview, cast, and crew
-  - TF-IDF vectorization and cosine similarity
-- Sentiment Analysis on movie reviews using:
-  - VADER SentimentIntensityAnalyzer from NLTK
-- Simple, clean, and interpretable output showing:
-  - Recommended movies
-  - Corresponding sentiment classification of reviews
+## Project Structure
 
----
+Movie-Recommendation-System/
+│
+├── app.py # Streamlit app
+├── Movie_Recommendation_System_With_Sentiment.ipynb # Notebook with full pipeline
+├── cosine_similarity.pkl # Saved cosine similarity matrix
+├── tfidf_vectorizer.pkl # Saved TF-IDF vectorizer
+├── Movies.csv # Cleaned movie dataset
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
 
-## 🛠️ Technologies Used
-
-- Python 3.x
-- Pandas, NumPy
-- Scikit-learn (TF-IDF, cosine similarity)
-- NLTK (VADER sentiment analysis)
-- Matplotlib (visualization)
-
----
-
-## 📁 File Structure
-
-- `Movie_Recommendation_System_With_Sentiment.ipynb` – Complete Jupyter Notebook with working code and explanations
-- Sentiment analysis code added to the end
-- Dummy review data used for testing the sentiment module
-
----
-
-## 📊 Sample Workflow
-
-1. Load and preprocess movie metadata (title, genres, overview, etc.)
-2. Combine features and vectorize them using TF-IDF
-3. Compute cosine similarity between movies
-4. Accept a movie name and output 5 most similar movies
-5. Perform sentiment analysis on reviews (or dummy text)
-6. Display sentiment distribution using bar chart
-
----
-
-## 📈 Evaluation Metrics
-
-- Cosine similarity matrix printed to verify similarity computation
-- Sentiment classification: Positive, Neutral, Negative (based on compound score)
-- Outputs include shape of similarity matrix and sample similarity scores
-
----
-
-## 📦 How to Run
-
-1. Clone or download the notebook.
-2. Install dependencies:
-
+## Setup Instructions
+**Clone the repository**
 ```bash
-pip install pandas numpy scikit-learn nltk matplotlib
+git clone https://github.com/your-username/movie-recommendation-system.git
+cd movie-recommendation-system
+Install dependencies
+
+pip install -r requirements.txt
+Run the Streamlit app
+streamlit run app.py
+
+Sentiment Analysis
+The system uses NLTK's VADER sentiment analyzer to classify user input text into one of the following:
+
+Positive
+
+Negative
+
+Neutral
+
+The VADER lexicon is downloaded automatically the first time you run the app.
+
+Requirements
+Python 3.7+
+
+Streamlit
+
+pandas
+
+scikit-learn
+
+nltk
+
+
+
+License
+This project is open-source and available under the MIT License.
